@@ -30,3 +30,8 @@ jobs:
 
     - name: Get GKE credentials
       run: gcloud container clusters get-credentials jenkins1 --region us-central1 --project clean-circuit-439619-c1
+    
+    - name: Deploy to GKE
+      run: |
+        cd flask
+        helm install flask .
